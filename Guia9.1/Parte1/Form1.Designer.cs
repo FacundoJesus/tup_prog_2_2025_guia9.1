@@ -55,6 +55,7 @@
             btnVerCuentas.TabIndex = 1;
             btnVerCuentas.Text = "Ver Cuentas";
             btnVerCuentas.UseVisualStyleBackColor = true;
+            btnVerCuentas.Click += btnVerCuentas_Click;
             // 
             // btnRestaurar
             // 
@@ -108,6 +109,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Ejercicio 1";
+            FormClosing += Form1_FormClosing;
             Load += Form1_Load;
             ResumeLayout(false);
         }

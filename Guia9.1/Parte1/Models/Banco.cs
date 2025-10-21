@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Parte1.Models
 {
+    [Serializable]
     public class Banco
     {
 

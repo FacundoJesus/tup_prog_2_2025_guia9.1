@@ -52,7 +52,7 @@ namespace Parte1.Models
 
         public override string ToString()
         {
-            return $"({this.Titular.DNI}) Nro. Cuenta: {this.Numero} Titular:{this.Titular.Nombre} - Saldo: ${this.Saldo:f2}";
+            return $"({this.Titular.DNI}) | Nro.Cuenta: {this.Numero} | Titular: {this.Titular.Nombre} | Saldo: ${this.Saldo:f2}";
         }
 
 
