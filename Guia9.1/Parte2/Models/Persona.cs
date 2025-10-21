@@ -4,10 +4,11 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Parte2.Models;
 
 namespace Parte1.Models
 {
-    public class Persona:IComparable
+    public class Persona:IComparable,IExportable
     {
         public int DNI { get; set; }
         public string Nombre { get; set; }
@@ -31,6 +32,16 @@ namespace Parte1.Models
 
             return $"{this.Nombre} - ({this.DNI})";
 
+        }
+
+        public string Exportar()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Importar(string linea)
+        {
+            throw new NotImplementedException();
         }
     }
 }

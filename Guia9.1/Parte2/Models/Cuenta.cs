@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Parte2.Models;
 namespace Parte1.Models
 {
-    public class Cuenta:IComparable
+    public class Cuenta:IComparable,IExportable
     {
         public int Numero {  get; set; }
 
@@ -55,6 +55,20 @@ namespace Parte1.Models
             return $"({this.Titular.DNI}) | Nro.Cuenta: {this.Numero} | Titular: {this.Titular.Nombre} | Saldo: ${this.Saldo:f2}";
         }
 
+        public string Exportar()
+        {
+            return $"{Titular.DNI};{Titular.Nombre};{this.Numero};{this.Saldo}";
+        }
 
+        public void Importar(string linea)
+        {
+            string[] splitResult = linea.Split(';');
+
+            Titular.DNI = Convert.ToInt32(splitResult[0]);
+            Titular.Nombre = splitResult[1];
+            this.Numero = Convert.ToInt32(splitResult[2]);
+            this.Saldo = Convert.ToDouble(splitResult[3]);
+
+        }
     }
 }

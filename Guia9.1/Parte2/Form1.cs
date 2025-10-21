@@ -83,14 +83,14 @@ namespace Parte1
                     sr.ReadLine();
                     while (!sr.EndOfStream)
                     {
-                        string linea = sr.ReadLine();
+                        /*string linea = sr.ReadLine();
                         string[] splitResult = linea.Split(';');
 
                         int dni = Convert.ToInt32(splitResult[0]);
                         string nombre = splitResult[1];
 
                         int numeroCuenta = Convert.ToInt32(splitResult[2]);
-                        double saldo = Convert.ToDouble(splitResult[3]);
+                        double saldo = Convert.ToDouble(splitResult[3]);*/
 
                         Persona titular = new Persona(dni, nombre);
                         Cuenta cuentaExistente = banco.VerCuentaPorNumero(numeroCuenta);
@@ -141,7 +141,7 @@ namespace Parte1
                     {
                         if (c.Saldo > 7000)
                         {
-                            sw.WriteLine($"{c.Titular.DNI};{c.Titular.Nombre};{c.Numero};{c.Saldo}");
+                            sw.WriteLine(c.Exportar());
                         }
                     }
                 }
